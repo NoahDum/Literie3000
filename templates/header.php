@@ -11,7 +11,9 @@
 
 <body>
     <header>
-        <img src="./Assets/img/logo.png" alt="">
+        <a href="index.php">
+          <img src="./Assets/img/logo.png" alt="">  
+        </a>
         <div>
             <a href="add_product.php">Ajouter un produit</a>
         </div>

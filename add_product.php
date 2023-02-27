@@ -28,7 +28,7 @@ if (!empty($_POST)) {
         // L'ajout de time() permet d'être sur d'avoir un hash unique
         $newFileName = md5($fileName . time()) . "." . $fileExtension;
         // Attention à vérifier que le dossier de destination est bien créé au préalable
-        $fileDestPath = "/img/{$newFileName}";
+        $fileDestPath = "./img/{$newFileName}";
 
         $allowedTypes = array("image/jpeg", "image/png", "image/webp");
         if (in_array($fileType, $allowedTypes)) {
