@@ -43,8 +43,10 @@ if (!empty($_POST)) {
         $errors["price"] = "Le prix ne peut être inférieur à 0";
     }
 
-    if ($promo < 0 && $promo > $price) {
-        $errors["promo"] = "La promotion ne peut être inférieur à 0 ou suppérieur au prix ";
+    if ($promo < 0 ) {
+        $errors["promo"] = "La promotion ne peut être inférieur à 0 ";
+    }else if($promo > 760){
+        $errors["promo"] = "La promotion ne peut être suppérieur au prix ";
     }
 
     // Requête d'insertion en BDD de la recette s'il n'y a aucune erreur
@@ -73,9 +75,8 @@ if (!empty($_POST)) {
 
 include("templates/header.php");
 ?>
-<h1>Ajouter une recette</h1>
-<!-- Lorsque l'attribut action est vide les données du formulaire sont envoyées à la même page -->
-<!-- Un formulaire utilisant un champ de type file doit forcément avoir un attribut enctype avec la valeur multipart/form-data -->
+<h1>Ajouter un produit</h1>
+<div class="container">
 <form action="" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="inputName">Nom du produit:</label>
@@ -116,7 +117,7 @@ include("templates/header.php");
 
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="inputPrice">Prix (en euro)</label>
         <input type="number" name="price" id="inputPrice" value="<?= $data["price"] ?>">
         <?php
@@ -128,7 +129,7 @@ include("templates/header.php");
         ?>
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="inputPromo">Prix apres promotion(en euro)</label>
         <input type="number" name="promo" id="inputPromo" value="<?= $data["promo"] ?>">
         <?php
@@ -140,5 +141,10 @@ include("templates/header.php");
         ?>
     </div>
 
-    <input type="submit" value="Ajouter la recette" class="btn-marmiton">
+    <input type="submit" value="Ajouter le produit" class="submit">
 </form>
+</div>
+</main>
+</body>
+
+</html>

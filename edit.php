@@ -69,7 +69,7 @@ if (isset($_GET["id"])) {
     $query = $db->prepare('SELECT * from catalogue where id = :id');
     $query->bindParam(':id', $id, PDO::PARAM_INT);
     $query->execute();
-    $bed = $query->fetch(); 
+    $bed = $query->fetch();
 
     if ($bed) {
         $find = true;
@@ -86,71 +86,71 @@ include("templates/header.php");
             <h1>Modification du lit <?= $data["name"] ?> </h1>
 
             <form action="" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label for="inputName">Nom du produit:</label>
-        <input type="text" id="inputName" name="name" value="<?= $data["name"]?>">
-        <?php
-        if (isset($errors["name"])) {
-        ?>
-            <span class="info-error"><?= $errors["name"] ?></span>
-        <?php
-        }
-        ?>
-    </div>
+                <div class="form-group">
+                    <label for="inputName">Nom du produit:</label>
+                    <input type="text" id="inputName" name="name" value="<?= $data["name"] ?>">
+                    <?php
+                    if (isset($errors["name"])) {
+                    ?>
+                        <span class="info-error"><?= $errors["name"] ?></span>
+                    <?php
+                    }
+                    ?>
+                </div>
 
-    <div class="form-group">
-        <label for="inputPicture">Photo du produit :</label>
-        <input type="file" id="inputPicture" name="inputPicture">
-        <?php
-        if (isset($errors["inputPicture"])) {
-        ?>
-            <span class="info-error"><?= $errors["inputPicture"] ?></span>
-        <?php
-        }
-        ?>
-    </div>
+                <div class="form-group">
+                    <label for="inputPicture">Photo du produit :</label>
+                    <input type="file" id="inputPicture" name="inputPicture">
+                    <?php
+                    if (isset($errors["inputPicture"])) {
+                    ?>
+                        <span class="info-error"><?= $errors["inputPicture"] ?></span>
+                    <?php
+                    }
+                    ?>
+                </div>
 
-    <div class="form-group">
-        <label for="inputMatName">Nom du matelas :</label>
-        <input type="text" name="MattressName" id="inputMatName" value="<?= $data["MattressName"]?>">
-    </div>
+                <div class="form-group">
+                    <label for="inputMatName">Nom du matelas :</label>
+                    <input type="text" name="MattressName" id="inputMatName" value="<?= $data["MattressName"] ?>">
+                </div>
 
-    <div class="form-group">
-        <label for="inputMatSize">Taille du Matelas</label>
-        <select name="MattressSize" id="inputMatSize">
-            <option <?= isset($MattressSize) && $MattressSize === "90x190" ? "selected" : "" ?> value="90x190">90x190</option>
-            <option <?= isset($MattressSize) && $MattressSize === "140x190" ? "selected" : "" ?> value="140x190">140x190</option>
-            <option <?= isset($MattressSize) && $MattressSize === "160x200" ? "selected" : "" ?> value="160x200">160x200</option>
-        </select>
+                <div class="form-group">
+                    <label for="inputMatSize">Taille du Matelas</label>
+                    <select name="MattressSize" id="inputMatSize">
+                        <option <?= isset($MattressSize) && $MattressSize === "90x190" ? "selected" : "" ?> value="90x190">90x190</option>
+                        <option <?= isset($MattressSize) && $MattressSize === "140x190" ? "selected" : "" ?> value="140x190">140x190</option>
+                        <option <?= isset($MattressSize) && $MattressSize === "160x200" ? "selected" : "" ?> value="160x200">160x200</option>
+                    </select>
 
-    </div>
+                </div>
 
-    <div>
-        <label for="inputPrice">Prix (en euro)</label>
-        <input type="number" name="price" id="inputPrice" value="<?= $data["price"] ?>">
-        <?php
-        if (isset($errors["price"])) {
-        ?>
-            <span class="info-error"><?= $errors["price"] ?></span>
-        <?php
-        }
-        ?>
-    </div>
+                <div class="form-group">
+                    <label for="inputPrice">Prix (en euro)</label>
+                    <input type="number" name="price" id="inputPrice" value="<?= $data["price"] ?>">
+                    <?php
+                    if (isset($errors["price"])) {
+                    ?>
+                        <span class="info-error"><?= $errors["price"] ?></span>
+                    <?php
+                    }
+                    ?>
+                </div>
 
-    <div>
-        <label for="inputPromo">Prix apres promotion(en euro)</label>
-        <input type="number" name="promo" id="inputPromo" value="<?= $data["promo"] ?>">
-        <?php
-        if (isset($errors["promo"])) {
-        ?>
-            <span class="info-error"><?= $errors["promo"] ?></span>
-        <?php
-        }
-        ?>
-    </div>
+                <div class="form-group">
+                    <label for="inputPromo">Prix apres promotion(en euro)</label>
+                    <input type="number" name="promo" id="inputPromo" value="<?= $data["promo"] ?>">
+                    <?php
+                    if (isset($errors["promo"])) {
+                    ?>
+                        <span class="info-error"><?= $errors["promo"] ?></span>
+                    <?php
+                    }
+                    ?>
+                </div>
 
-    <input type="submit" value="Ajouter la recette" class="btn-marmiton">
-</form>
+                <input type="submit" value="Valider la modification" class="submit">
+            </form>
     </div>
 <?php
         } else {

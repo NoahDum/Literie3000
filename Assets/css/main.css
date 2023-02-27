@@ -13,10 +13,14 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  font-size: x-large;
 }
 header a {
   text-decoration: none;
   color: white;
+}
+header a img {
+  height: 10vh;
 }
 
 h1 {
@@ -75,15 +79,53 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
-.container form {
+
+form {
   color: white;
   display: flex;
   flex-direction: column;
   width: 70%;
   text-align: center;
 }
-.container form input, .container form select {
+form input, form select {
   text-align: center;
+}
+form .form-group {
+  flex-basis: 100%;
+  padding: 0 3rem;
+  margin-bottom: 2rem;
+}
+form .form-group label {
+  display: block;
+  margin-bottom: 1rem;
+}
+form .form-group input,
+form .form-group textarea,
+form .form-group select {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2rem;
+  border: 0;
+  box-shadow: 0 0 1rem #ddd;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+form .form-group select {
+  background-position: right 1rem top;
+  appearance: none;
+}
+form .submit {
+  font-family: "Filson Soft";
+  font-size: 1.8rem;
+  background-color: #0C4085;
+  color: white;
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -11,9 +11,13 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    font-size: x-large;
     a{
         text-decoration: none;
         color: white;
+        img{
+            height: 10vh;
+        }
     }
 }
 h1{
@@ -71,14 +75,57 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    form{
-        color: white;
-        display: flex;
-        flex-direction: column;
-        width: 70%;
+}
+form{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: center;
+    input, select{
         text-align: center;
-        input, select{
-            text-align: center;
-        }
+    }
+.form-group {
+    flex-basis: 100%;
+
+    padding: 0 3rem;
+    margin-bottom: 2rem;
+
+    label {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    input,
+    textarea,
+    select {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 2rem;
+        border: 0;
+        box-shadow: 0 0 1rem #ddd;
+        text-align: center;
+        background-color: white;
+        color: black;
+    }
+
+    select {
+        background-position: right 1rem top;
+        appearance: none;
     }
 }
+.submit{
+    font-family: "Filson Soft";
+    font-size: 1.8rem;
+    background-color: #0C4085;
+    color: white;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 2rem;
+}
+}
+
+

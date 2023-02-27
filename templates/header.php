@@ -12,7 +12,7 @@
 <body>
     <header>
         <a href="index.php">
-          <img src="./Assets/img/logo.png" alt="">  
+          <img src="./img/logo.png" alt="">  
         </a>
         <div>
             <a href="add_product.php">Ajouter un produit</a>
