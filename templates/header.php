@@ -13,6 +13,6 @@
     <header>
         <img src="./Assets/img/logo.png" alt="">
         <div>
-            <a href="">Ajouter un produit</a>
+            <a href="add_product.php">Ajouter un produit</a>
         </div>
     </header>

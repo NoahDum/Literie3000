@@ -15,7 +15,7 @@ include("templates/header.php");
                 foreach ($beds as $bed) {
                 ?>
                     <li>
-                        <img src="./Assets/img/<?= $bed["image"] ?>" alt="">
+                        <img src="./img/<?= $bed["picture"] ?>" alt="">
                         <h3><?= $bed["name"] ?></h3>
                         <div>
                         <p><?= $bed["MattressName"] ?></p> 
@@ -27,7 +27,8 @@ include("templates/header.php");
                         </div>
                         <div>
                             <a href="edit.php?id=<?= $bed["id"] ?>" class="edit">Modifier</a>
-                            <a href="" class="delete">Supprimer</a>
+                            <a href="delete.php?id=<?= $bed["id"] ?>" class="delete">Supprimer</a>
+
                         </div>
                     </li>
                 <?php
