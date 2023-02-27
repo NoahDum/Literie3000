@@ -6,14 +6,16 @@ CREATE table catalogue (
     id int PRIMARY KEY auto_increment,
     image varchar(255) not null,
     name varchar(100) not null,
-    decription varchar(255),
-    price decimal(6,2)
+    MattressName varchar(255),
+    MattressSize varchar(50),
+    price decimal(6,2),
+    promo decimal(6,2)
 );
 
 INSERT INTO catalogue 
-(image,name,decription,price)
+(image,name,MattressName,MattressSize,price,promo)
 VALUES
-("almunda.jpeg","Almunda","Matelas Transition 90x190",759.00),
-("bjorn.jpeg","Bjorn","Matelas Stan 90x190",809.00),
-("eclipe.jpeg","Eclipse","Matelas Teamasse 140x190",759.00),
-("panama.jpeg","Panama","Matelas Coup de boule 160x200",1019.00)
+("almunda.jpeg","Almunda","Matelas Transition","90x190",759.00,529.00),
+("bjorn.jpeg","Bjorn","Matelas Stan","90x190",809.00,709.00),
+("eclipse.jpeg","Eclipse","Matelas Teamasse","140x190",759.00,529.00),
+("panama.jpeg","Panama","Matelas Coup de boule","160x200",1019.00,509.00)
