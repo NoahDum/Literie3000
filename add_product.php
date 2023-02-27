@@ -12,6 +12,11 @@ if (!empty($_POST)) {
         $errors["name"] = "Le nom du produit est obligatoire";
     }
 
+    if (empty($MattressName)) {
+        $errors["MattressName"] = "Le nom du matelas est obligatoire";
+    }
+
+
 
     var_dump($_FILES);
     if (isset($_FILES["inputPicture"]) && $_FILES["inputPicture"]["error"] === UPLOAD_ERR_OK) {
@@ -44,9 +49,8 @@ if (!empty($_POST)) {
 
     if ($promo < 0 ) {
         $errors["promo"] = "La promotion ne peut être inférieur à 0 ";
-    }else if($promo > $price){
-        $errors["promo"] = "La promotion ne peut être supérieur au prix ";
     }
+    
     if (empty($errors)) {
 
         $dsn = "mysql:host=localhost;dbname=literie3000";
@@ -100,6 +104,13 @@ include("templates/header.php");
     <div class="form-group">
         <label for="inputMatName">Nom du matelas :</label>
         <input type="text" name="MattressName" id="inputMatName">
+        <?php
+        if (isset($errors["MattressName"])) {
+        ?>
+            <span class="info-error"><?= $errors["name"] ?></span>
+        <?php
+        }
+        ?>
     </div>
 
     <div class="form-group">
