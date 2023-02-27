@@ -17,8 +17,6 @@ if (!empty($_POST)) {
     }
 
 
-
-    var_dump($_FILES);
     if (isset($_FILES["inputPicture"]) && $_FILES["inputPicture"]["error"] === UPLOAD_ERR_OK) {
 
         $fileTmpPath = $_FILES["inputPicture"]["tmp_name"];
@@ -49,6 +47,8 @@ if (!empty($_POST)) {
 
     if ($promo < 0 ) {
         $errors["promo"] = "La promotion ne peut être inférieur à 0 ";
+    }else if ($promo > $price){
+        $errors["promo"] = "La promotion ne peut être suppérieur au prix ";
     }
     
     if (empty($errors)) {
